@@ -2,11 +2,11 @@ How long will a NiMH battery pack last in a NEC PC-8201 or PC-8201a?
 
 [Photo - Orig NEC battery pack]
 
-The NEC PC-8201, PC-8201a, and PC-8300 are a bit different from their Kyocera cousins in that they have the ability to use swappable battery packs (NEC MODEL NUMBER & Link) rather than just using fresh Alkaline AA cells. NEC even released a rechargable battery pack (NEC MODEL...).
+The NEC PC-8201, PC-8201a, and PC-8300 are a bit different from their Kyocera cousins (Tandy Model 100, Olivetti M10, Kyocera K-85) in that they have the ability to use swappable battery packs (NEC MODEL NUMBER & Link) rather than just using Alkaline AA cells. NEC even released a rechargable battery pack (NEC MODEL...).
 
 Lately I've converted a couple of the standard NEC battery packs into packs capable of using rechargable Nickle Metal Hydride batteries. The process is simple, and outlined quite well in this brief article (https://www.web8201.net/NiCadMod.asp).
 
-Basically, add a jumper and a resistor (or couple of resistors in series) to the pack and it's ready for rechargables.
+Basically, add a jumper and a resistor (or couple of resistors in series) to the pack and it's ready for rechargables. It's a one-way trip, you can't use Alkaline cells in the pack after the conversion.
 
 [photos]
 
@@ -14,12 +14,12 @@ The resistors are needed to convert the voltage up to the expected values -- rec
 
 The jumper tells the computer to trickle-charge the batteries when the system is plugged in and turned off.
 
-As was doing this, I wondered just what the run-time of a battery pack would be. So I came up with is a simple BASIC program to run the computer battery down, and record the time that it dies. 
+As was doing this, I wondered just what the run-time of a battery pack would be. So I came up with is a simple BASIC program to run the computer battery down, and record the time that it dies and calculae the run-time. 
 
 Not being a computer scientist or electrical engineering wizard, I've made a lot of assumptions and probably some mistakes, but this seems to work for me. Feedback is appreciated :)
 
 Basically (ha!), it's an endless loop that:
- - writes the current iteration through the loop to the screen (until the system time minute value chaanges)
+ - writes the current iteration of the loop to the screen (until the system time minute value chaanges)
  - once every minute it writes to a RAM file; the system date, start time, current time, iteration number, and calculated run-time of the battery pack
  - loops to the next iteration
 
