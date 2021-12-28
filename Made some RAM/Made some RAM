@@ -1,0 +1,37 @@
+Original expansion RAM for the NEC PC-8201a and Tandy Model 100 is pretty hard to find these days. Lucky for us, there are modern third-party replacement options available, either premade and sold on eBay or as DIY kits.
+
+While I've purchased premade, I've been more satisfied by assembling the modules.
+
+The process is pretty simple, just select and order the Printed Circuit Board (PCB) you want, order the associated components, and wait for them to be delivered.
+
+The designs have BOMs (Bill of Materials) for major component suppliers, which makes ordering easy.
+
+I built this design a couple of months ago.
+
+And this new set this week.
+
+For my most recent RAM build, I ordered this surface mount layout, printed at OSHpark. Components came from DigiKey.
+
+I thought I was going to be cool and have some nifty black boards, but I didn't look at the PCB design and description closely enough.
+
+The substrate is indeed black, and the solder mask is indeed clear, but I'd neglected to notice that the excess copper layer wasn't removed in the original board layout. So the black substrate was covered by the copper, gleaming nicely through the clear solder mask :)
+
+On to building them.
+The first step is to clean up the boards. There are a few rough points where the boards were attached to the main production boards. Then clean with isopropyl alcohol.
+
+Surface mount soldering is pretty easy once you get the hang of it (great video on it here), and I had no problem with the integrated circuit chips.
+
+The resistors were another story. This was the first time I'd tried resistors. The silly things are so tiny they just wouldn't stay put as I soldered them down.
+
+Eventually I did manage to get all four on, though I'd not call it my best work. As it turned out after testing, one end of one resistor had a cold solder joint and I had to reflow that end.
+
+And finally the pins. The board designers used an innovative method of simplifying pin installation which is better detailed in this post. It worked quite well.
+
+As did the RAM! After a cleaning off the solder resin paste and installing into my NEC PC-8201a, I was happy to see 16k more memory available in the first RAM bank.
+
+Quite satisfying.
+
+
+
+
+
