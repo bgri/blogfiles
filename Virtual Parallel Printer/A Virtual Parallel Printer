@@ -1,0 +1,69 @@
+A Virtual Parallel Printer
+
+One of the neat things about using vintage computing equipment is figuring out modern ways to work with the older technology.
+
+Why virtual printing?
+Recently, I wanted to explore printed output from my NEC PC-8201a. For one thing, working 'on the hardware' in this case has a display limit of eight lines of forty characters -- a bit of a pain when you're used to working with full scrolling screens of text on a modern computer. A virtual printer would let me dump a document or listing to the printer and see the whole thing. 
+
+Yes, not exactly an 'authentic' vintage experience, but one I'm willing to sacrifice if I end up using the vintage device a bit more :)
+
+Wherefore art thou, virtual printer?
+Vintage hardware and modern hardware don't always play easily together. Modern printers usually connect to computers by a managed USB port or via network connection. Neither option existed forty years ago so another solution was needed.
+
+After a bit of searching and reading the /r/battlestations subreddit I came upon the NEWPRINT/Multi Virtual Printer Interface, ostensibly for the <i>TRS80 Model 1/3/4/4p, Apple IIe (w/Grappler+),and other* vintage computers.</i> The NEC PC-8201a falls into the 'other' category.
+
+To quote the website:
+NEWPRINT/Multi is a wifi-enabled "virtual" printer adapter for TRS-80 (Model 1, 3, 4/4P) and Apple IIe (with Grappler+ printer card). *Other vintage computers may work with NEWPRINT but only TRS-80 and Apple IIe have been tested at the moment. NEWPRINT connects to your computer's printer port and your local wifi network to send printer output to any device that supports a modern browser (iPad, Desktop PC, Mac, etc.).
+
+That looked like it would do the trick. The NEC PC-8201 uses a standard parallel printer protocol, so interfacing should be pretty straight forward.
+
+Given the similarity of the NEC units and it's m100 brethren (Tandy Model 100, 102, 200, Olivetti M10, Kyocera K-85), I'd expect the NEWPRINT/Multi to work with them as well.
+
+I ordered a unit, and a parallel cable as I also have an Apple //e that will eventually need to talk to the virtual printer. 
+
+As well, you'll need a power supply (none included in the package) but any +5 Volt DC Micro-usb power supply (ie. cell phone charger) or standard 5.5mm barrel jack power supply will do. There are also power pins on the PCB if you chose to wire power in directly.
+
+After ten days and one border/customs crossing, it arrived. Now to hook it up.
+
+Connecting the connector
+The NEWPRINT/Multi is a nice PCB that snaps into the included 3d-printed base. A clean approach. 
+
+The cable uses standard a standard 34 pin connector common to many microcomputers of the time. And the more astute m100 reader would notice this red flag here. I didn't.
+
+I should have remembered that the NEC PC-8201a uses a standard 26 pin connector. While the ribbon cable I ordered would work fine for my Apple //e, it won't for the NEC.
+
+A brief conversation with Kyle, the NEWPRINT/Multi designer, ensued. He was able to clarify which signals weren't that important as the NEC PC-8201a managed to communicate to printers-of-the-day just fine using fewer pins. 
+
+Fortunately I had some female-female jumper cables used in previous Arduino projects, and the printer connection was made. I've since ordered proper connectors and ribbon cable and will build a more permanent cable soon.
+
+Setup
+After overcoming the minor hardware conundrum, the next step was to get it set up and connected to my WiFi network.
+
+The NEWPRINT/Multi website contains a link to the PDF documentation. The setup portion was clear and concise, and my setup worked on the first attempt.
+
+Basically, you put the NEWPRINT/Multi into 'command' mode, power up your computer, jump into BASIC, and type some 'LPRINT' commands which speak directly to the NEWPRINT/Multi and configure it to your WiFi network.
+
+Once that's done, reboot the NEWPRINT/Multi and the virtual printer will be up and running. 
+
+Where's my virtual printer?
+Ok, we've got the vintage computer talking to the to the virtual printer using the parallel printer port. Stuff's going to the virtual printer, but where can I see it?
+
+The NEWPRINT/Multi is a cool little board. Once you've completed the network setup, and rebooted it, it set up a web server at ws://newprint.local. So all you have to do is point any web browser on your local network to ws://newprint.local and you'll see the virtual printer interface.
+
+Now any print commands from the vintage computer will be received and processed by the virtual printer and displayed on your web browser in that very slick interface.
+
+What's next?
+Well, in my case, a bit more BASIC coding with easier debugging by viewing full printouts, and maybe updating / designing programs to output to the larger printer display. A poor-mans Video Display Interface for the m100 :)
+
+I may also try and extend the virtual printer verisimilitude by mounting the NEWPRINT/Multi into a 3d-printed period-emulating printer case. Kyle shared a design he posted to Thingiverse and I may modify that to include a slot for an older tablet so that the 'printer' will have 'virtual paper' :)
+
+Oh, and in my email exchange with Kyle, he did hint that Printshop graphic support for the Apple II is coming soon, though would require a firmware update of the NEWPRINT/Multi device. Reasonably straightforward, it seems according to the documentation.
+
+Perhaps that will get me motivated to start cleaning and restoring the old family Apple //e. Fodder for a future post.
+
+
+
+
+
+
+
